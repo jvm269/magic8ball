@@ -1,4 +1,4 @@
-# magic8ball
+# Magic8ball
 Project:  Magic 8 Ball
 
 

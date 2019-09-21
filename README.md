@@ -17,7 +17,7 @@ Data Set:
 https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/keras/datasets/mnist/load_data
 
 Tools:  
-Keras for machine learning
+Keras for machine learning\n
 HTML, CSS, Bootstrap to create webpage
 Javascript
-Flask server to make connection to 
+Flask serve

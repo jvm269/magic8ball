@@ -3,12 +3,12 @@ Project:  Magic 8 Ball
 
 
 Team:  
-Moutasem Akkad
-Krystal Briggs
-Gan Jin
-Jihan McKenzie
-Denise Person
-Rachel Song
+Moutasem Akkad 
+Krystal Briggs 
+Gan Jin 
+Jihan McKenzie 
+Denise Person 
+Rachel Song 
 
 Proposal:  
 Creating a user interactive interface that utilizes machine leanring to identify handwritten numbers.  

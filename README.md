@@ -16,7 +16,7 @@ Creating a user interactive interface that utilizes machine leanring to identify
 Data Set:  
 https://www.tensorflow.org/versions/r2.0/api_docs/python/tf/keras/datasets/mnist/load_data
 
-Tools:
+Tools:  
 Keras for machine learning
 HTML, CSS, Bootstrap to create webpage
 Javascript

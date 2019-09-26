@@ -36,17 +36,15 @@
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
 </head>
 <body onload="init()">
-    <div id="bg">
-        </div>
+    <div id="bg"></div>
     <div id="main">
-        
         <div id="logo">MNIST</div>
         <nav>
             <ul>
                 <li>Home</li>
-                <li> Sketch Artist</li>
+                <li>Sketch Artist</li>
                 <li>About</li>
-                <li> Contact</li>
+                <li>Contact</li>
             </ul>
         </nav>
         <div id="sign-nav">
@@ -59,7 +57,7 @@
         </div>
 
         <div id="main-content">
-               <div id="big-title">
+               <!-- <div id="big-title">
                  <h1>Magic 8 Ball</h1>
                  
                </div>
@@ -69,17 +67,26 @@
                    an image classification model and train it to predict an image
                    that a user creates through an interactive drawing pad.
                     </p>
-                </div>
+                </div> -->
+                <!-- <div>
+                    <canvas id="main"></canvas>
+                </div> -->
                 <div class="btn" onclick="save()">
                     Press Me
                 </div>
 
-                <canvas id="can" width="200" height="200" style="position:relative;top:5.5%;left:-20%;border:2px solid;"></canvas>
-                <img id="canvasimg" style="position:relative;top:-20%;left:10%;" style="display:none;">
-        </div>
+                <div>
+                    <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas>
+            
+                    <img id="canvasimg" style="position:relative;" style="display:none;">
+
+                </div>
+
+                
+            </div>
         
     
-            </div>
+        </div>
 
         
         

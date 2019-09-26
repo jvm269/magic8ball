@@ -5,7 +5,7 @@ prevY = 0,
 currY = 0,
 dot_flag = false;
 
-var x = "white",
+var x = "red",
 y = 10;
 
 function init() {
@@ -126,3 +126,4 @@ if (res == 'move') {
 //     base64 = dataURL.replace(/^data:image\/png;base64,/, "");
 //     return base64;
 // }
+

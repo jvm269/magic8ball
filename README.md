@@ -19,6 +19,8 @@ Data is extracted from the Modified National Institute of Standards and Technolo
 
 Dataset contains 60,000 training images and 10,000 testing images. 
 
+Significance: Data can be used to 
+
 Tools:  
 Keras for machine learning  
 HTML, CSS, Bootstrap to create webpage  

@@ -43,20 +43,28 @@ def predict():
     # encode it into a suitable format
     convertImage(imgData)
     # read the image into memory
+    # use .convert('L') to convert file to (8-bit pixels, black and white) - gray scale
     x = imread('output.png', mode='L')
-    # make it the right size
+    # x = np.invert(x)
+    # resize width & height to 28 x 28
     x = imresize(x, (28, 28))
+    # DO I NEED TO CONVERT TO PIXELS?
+    img_array = np.array(x).astype(np.float32)
+    # img_array = img_array.reshape(784)
     # imsave('final_image.jpg', x)
     # convert to a 4D tensor to feed into our model
-    x = x.reshape(1, 28, 28, 1)
+    x = img_array.reshape(1, 28, 28, 1)
     # in our computation graph
     with graph.as_default():
         # perform the prediction
-        out = model.predict(x)
-        print(out)
-        print(np.argmax(out, axis=1))
+        prediction = model.predict(x)
+        print(prediction)
+        # use np.argmax to find prediction value
+        print(np.argmax(prediction, axis=1))
         # convert the response to a string
-        response = np.argmax(out, axis=1)
+        response = np.argmax(prediction, axis=1)
+        # DO I NEED TO JSONIFY STRING?
+        # return jsonify(str(response[0]))
         return str(response[0])
 
 if __name__ == "__main__":

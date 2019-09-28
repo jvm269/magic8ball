@@ -78,9 +78,18 @@ ctx.closePath();
 function save() {
 document.getElementById("canvasimg").style.border = "2px solid";
 var dataURL = canvas.toDataURL();
-document.getElementById("canvasimg").src = dataURL;
-document.getElementById("canvasimg").style.display = "inline";
+// document.getElementById("canvasimg").src = dataURL;
+// document.getElementById("canvasimg").style.display = "inline";
 console.log(dataURL)
+fetch('/predict', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        'ImageStirng': dataURL
+    })
+})
 }
 
 function findxy(res, e) {
@@ -113,17 +122,3 @@ if (res == 'move') {
     }
 }
 }
-
-// function imageToBase64(img)
-// {
-//     var canvas, ctx, dataURL, base64;
-//     canvas = document.createElement("canvas");
-//     ctx = canvas.getContext("2d");
-//     canvas.width = img.width;
-//     canvas.height = img.height;
-//     ctx.drawImage(img, 0, 0);
-//     dataURL = canvas.toDataURL("image/png");
-//     base64 = dataURL.replace(/^data:image\/png;base64,/, "");
-//     return base64;
-// }
-

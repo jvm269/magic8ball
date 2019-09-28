@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MNIST Image Classification</title>
+    <script src= 
+    "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"> 
+        </script> 
+         <script src="{{ url_for('static',filename='index.js') }}"></script>
+         <script type="text/javascript">
+         $(".myButton").click(function(){
+           var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+           var canvasObj = document.getElementById("canvas");
+           var img = canvasObj.toDataURL();
+           $.ajax({
+             type: "POST",
+             url: $SCRIPT_ROOT + "/predict/",
+             data: img,
+             success: function(data){
+               $('#result').text(' Predicted Output: '+data);
+             }
+           });
+        });
+          </script>
+    
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -44,7 +64,7 @@
                     </p>
                 </div>
                 <div class="btn">
-                    Press Me
+                <button>Press Me</button>
                 </div>
         </div>
         
@@ -52,9 +72,20 @@
             </div>
 
         
-        
-    </div>
-
+          
+    <!-- </div> -->
+<!-- Script to use ajax() method to 
+        add text content -->
+        <script> 
+            $(document).ready(function(){ 
+                $("button").click(function(){ 
+                    $.ajax({url: "image.txt", async: false, 
+                                    success: function(result) { 
+                        $("h11").html(result); 
+                    }}); 
+                }); 
+            }); 
+        </script> 
   
 </body>
 </html>

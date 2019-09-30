@@ -80,7 +80,7 @@ document.getElementById("canvasimg").style.border = "2px solid";
 var dataURL = canvas.toDataURL();
 // document.getElementById("canvasimg").src = dataURL;
 // document.getElementById("canvasimg").style.display = "inline";
-console.log(dataURL)
+console.log(dataURL);
 fetch('/predict', {
     method: 'POST',
     headers: {
@@ -90,6 +90,7 @@ fetch('/predict', {
         'ImageStirng': dataURL
     })
 })
+return data
 }
 
 function findxy(res, e) {

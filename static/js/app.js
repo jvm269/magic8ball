@@ -76,8 +76,7 @@ ctx.closePath();
 // }
 
 function save() {
-prediction = d3.select("h1")
-document.getElementById("canvasimg").style.border = "2px solid";
+// document.getElementById("canvasimg").style.border = "2px solid";
 var dataURL = canvas.toDataURL();
 // document.getElementById("canvasimg").src = dataURL;
 // document.getElementById("canvasimg").style.display = "inline";
@@ -94,15 +93,12 @@ fetch('/predict', {
 .then(res=>res.json())
   .then(function(res) {
       console.log(res)
-      d3.select("tbody")
-  .selectAll("tr")
+d3.select("#result")
+    .select("p")
   .data(res)
-  .enter()
-  .append("tr")
-  .html(function(res) {
-    return `<td>${res}</td>`;
+  .text(function(res) {
+    return `You write: ${res}`;
   });
-
   }
   );
 }

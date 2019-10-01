@@ -30,9 +30,13 @@
         </div>
 
         <div id="main-content">
-                <div class="btn" id="trigger" onclick="save()">
+                <div class="btn" onclick="save()">
                     Press Me
                 </div>
+                <div class="btn" onclick="window.location.reload();">
+                    Restart
+                </div>
+
                 <div class="container">
                     
                 <div>
@@ -45,17 +49,10 @@
 
                     <div class="text-center">
                         <font size="20">
-                        <!-- Add Result message with Prediction served from backend -->
-                        <table align="center" font>
-                          <thead>
-                            <tr><th> </th></tr>
-                            <tr><th> </th></tr>
-                            <tr><th> </th></tr>
-                            <tr><th> </th></tr>
-                              <tr><th>Prediction:</th></tr>
-                          </thead>
-                          <tbody></tbody>
-                      </table>
+                      <div id="result">
+                        <p >You write: </p>
+                      </div>
+
                       </font>
       
                       </div>

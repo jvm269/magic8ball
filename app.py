@@ -58,6 +58,7 @@ def predict():
     image_array = img_to_array(image)
     image_array = image_array.flatten()
     image_array = image_array.reshape(1,28,28,1)
+    # print(image_array)
 
     model = load_model("digit.h5")
     prediction = model.predict(image_array)

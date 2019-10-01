@@ -33,12 +33,34 @@
                 <div class="btn" id="trigger" onclick="save()">
                     Press Me
                 </div>
-
+                <div class="container">
+                    
                 <div>
                     <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas>
+                    <!-- <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas> -->
             
                     <img id="canvasimg" style="position:relative;" style="display:none;">
+                </div>
+                <div>
 
+                    <div class="text-center">
+                        <font size="20">
+                        <!-- Add Result message with Prediction served from backend -->
+                        <table align="center" font>
+                          <thead>
+                            <tr><th> </th></tr>
+                            <tr><th> </th></tr>
+                            <tr><th> </th></tr>
+                            <tr><th> </th></tr>
+                              <tr><th>Prediction:</th></tr>
+                          </thead>
+                          <tbody></tbody>
+                      </table>
+                      </font>
+      
+                      </div>
+  
+                    </div>
                 </div>             
             </div>
         </div>   
@@ -47,6 +69,7 @@
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
   
 </body>
 </html>

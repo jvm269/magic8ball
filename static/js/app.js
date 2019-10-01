@@ -76,11 +76,12 @@ ctx.closePath();
 // }
 
 function save() {
+prediction = d3.select("h1")
 document.getElementById("canvasimg").style.border = "2px solid";
 var dataURL = canvas.toDataURL();
 // document.getElementById("canvasimg").src = dataURL;
 // document.getElementById("canvasimg").style.display = "inline";
-console.log(dataURL)
+console.log(dataURL);
 fetch('/predict', {
     method: 'POST',
     headers: {
@@ -90,6 +91,20 @@ fetch('/predict', {
         'ImageStirng': dataURL
     })
 })
+.then(res=>res.json())
+  .then(function(res) {
+      console.log(res)
+      d3.select("tbody")
+  .selectAll("tr")
+  .data(res)
+  .enter()
+  .append("tr")
+  .html(function(res) {
+    return `<td>${res}</td>`;
+  });
+
+  }
+  );
 }
 
 function findxy(res, e) {

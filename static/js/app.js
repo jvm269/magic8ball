@@ -76,6 +76,7 @@ ctx.closePath();
 // }
 
 function save() {
+prediction = d3.select("h1")
 document.getElementById("canvasimg").style.border = "2px solid";
 var dataURL = canvas.toDataURL();
 // document.getElementById("canvasimg").src = dataURL;
@@ -90,7 +91,20 @@ fetch('/predict', {
         'ImageStirng': dataURL
     })
 })
-return data
+.then(res=>res.json())
+  .then(function(res) {
+      console.log(res)
+      d3.select("tbody")
+  .selectAll("tr")
+  .data(res)
+  .enter()
+  .append("tr")
+  .html(function(res) {
+    return `<td>${res}</td>`;
+  });
+
+  }
+  );
 }
 
 function findxy(res, e) {

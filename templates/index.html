@@ -33,6 +33,13 @@
                 <div class="btn" id="trigger" onclick="save()">
                     Press Me
                 </div>
+                <div class="container">
+                    <div class="jumbotron text-center">
+                      
+                      <!-- Add Result message with Prediction served from backend -->
+                      <h1>This Predicts {{ Result }}</h1>
+                      <p>{{ Result }} !</p>
+                    </div>
 
                 <div>
                     <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas>

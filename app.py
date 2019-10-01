@@ -12,9 +12,9 @@ import tensorflow as tf
 
 from tensorflow.keras.models import load_model
 
-global model
+# global model
 
-model = load_model("model.h5")
+# model = load_model("model.h5")
 
 # sys.path.append(os.path.abspath("./model"))
 # from tensorflow.keras.models import model_from_json
@@ -59,7 +59,7 @@ def predict():
     image_array = image_array.flatten()
     image_array = image_array.reshape(1,28,28,1)
 
-    model = load_model("model.h5")
+    model = load_model("digit.h5")
     prediction = model.predict(image_array)
     print(prediction)
     result = np.argmax(prediction, axis=1)

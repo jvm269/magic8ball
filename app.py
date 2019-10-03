@@ -12,32 +12,8 @@ import tensorflow as tf
 
 from tensorflow.keras.models import load_model
 
-# global model
-
-# model = load_model("model.h5")
-
-# sys.path.append(os.path.abspath("./model"))
-# from tensorflow.keras.models import model_from_json
-
-# def init():
-#   json_file = open('./model/model.json','r')
-#   loaded_model_json = json_file.read()
-#   json_file.close()
-#   print(f'test: {loaded_model_json}')
-#   loaded_model = model_from_json(loaded_model_json)
-#   #load weights into new model
-#   loaded_model.load_weights("./model/model.h5")
-#   print("Loaded Model from disk")
-#   #compile and evaluate loaded model
-#   loaded_model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
-#   graph = tf.get_default_graph()
-#   return loaded_model,graph
-
-
 
 app = Flask(__name__)
-# model, graph = init()
-# model = load_model("model.h5")
 
 @app.route("/")
 def index():
@@ -47,7 +23,6 @@ def index():
 def predict():
     # NEED IF THEN OR KNOWS POST OR GET
     image_data = request.get_data()
-    # print(image_data)
 
     # Convert base64 to image
     imgstr = re.search(r'base64,(.*)', str(image_data)).group(1)
@@ -56,20 +31,23 @@ def predict():
     image_size = 28, 28
     image = image.resize(image_size, Image.ANTIALIAS)
     image_array = img_to_array(image)
+    image_array /= 255
     image_array = image_array.flatten()
     image_array = image_array.reshape(1,28,28,1)
+    # print(image_array)
 
-    model = load_model("digit.h5")
+    model = load_model("modellabeledfinal.h5")
     prediction = model.predict(image_array)
     print(prediction)
     result = np.argmax(prediction, axis=1)
     print(result)
 
-    return jsonify(str(result[0]))
+    mapping =  {"0" : "0","1": "1","2": "2","3": "3","4": "4","5": "5","6": "6","7": "7","8": "8","9": "9","10": 'A',"11": 'B',"12": 'C',"13": 'D',"14": 'E',"15": 'F',"16": 'G',"17": 'H',"18": 'I',"19": 'J',"20": 'K',"21": 'L',"22": 'M',"23": 'N',"24": 'O',"25": 'P',"26": 'Q',"27": 'R',"28": 'S',"29": 'T',"30": 'U',"31": 'V',"32": 'W',"33": 'X',"34": 'Y',"35": 'Z'}
+    print(mapping[str(result[0])])
 
-    # return render_template("index.html", result = jsonify(str(result[0])))
+    return jsonify(mapping[str(result[0])])
 
- 
+
 
 if __name__ == "__main__":
     app.run(debug=True)

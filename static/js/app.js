@@ -5,7 +5,7 @@ prevY = 0,
 currY = 0,
 dot_flag = false;
 
-var x = "red",
+var x = "white",
 y = 10;
 
 function init() {

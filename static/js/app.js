@@ -97,7 +97,7 @@ d3.select("#result")
     .select("p")
   .data(res)
   .text(function(res) {
-    return `You write: ${res}`;
+    return `You wrote: ${res}`;
   });
   }
   );

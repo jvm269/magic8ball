@@ -28,34 +28,7 @@ canvas.addEventListener("mouseout", function (e) {
 }, false);
 }
 
-// function color(obj) {
-// switch (obj.id) {
-//         case "green":
-//             x = "green";
-//             break;
-//         case "blue":
-//             x = "blue";
-//             break;
-//         case "red":
-//             x = "red";
-//             break;
-//         case "yellow":
-//             x = "yellow";
-//             break;
-//         case "orange":
-//             x = "orange";
-//             break;
-//         case "black":
-//             x = "black";
-//             break;
-//     case "white":
-//         x = "white";
-//         break;
-// }
-// if (x == "white") y = 14;
-// else y = 2;
 
-// }
 
 function draw() {
 ctx.beginPath();
@@ -67,13 +40,6 @@ ctx.stroke();
 ctx.closePath();
 }
 
-// function erase() {
-// var m = confirm("Want to clear");
-// if (m) {
-//     ctx.clearRect(0, 0, w, h);
-//     document.getElementById("canvasimg").style.display = "none";
-// }
-// }
 
 function save() {
 // document.getElementById("canvasimg").style.border = "2px solid";

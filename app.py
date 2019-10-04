@@ -15,6 +15,17 @@ from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
+
+def init():
+   global model, graph
+   # load the pre-trained Keras model
+   model = load_model("modellabeledfinal.h5")
+   graph = tf.compat.v1.get_default_graph()
+
+
+init()
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -36,7 +47,7 @@ def predict():
     image_array = image_array.reshape(1,28,28,1)
     # print(image_array)
 
-    model = load_model("modellabeledfinal.h5")
+    # model = load_model("modellabeledfinal.h5")
     prediction = model.predict(image_array)
     print(prediction)
     result = np.argmax(prediction, axis=1)
@@ -49,5 +60,9 @@ def predict():
 
 
 
+# if __name__ == "__main__":
+#     app.run(debug=False)
 if __name__ == "__main__":
-    app.run(debug=True)
+   print(("* Loading Keras model and Flask starting server..."
+       "please wait until server has fully started"))
+   app.run(debug=False)

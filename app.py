@@ -32,10 +32,10 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # NEED IF THEN OR KNOWS POST OR GET
+    # Access user drawn image
     image_data = request.get_data()
 
-    # Convert base64 to image
+    # Preprocess image in format of trained image
     imgstr = re.search(r'base64,(.*)', str(image_data)).group(1)
     image_bytes = io.BytesIO(base64.b64decode(imgstr))
     image = Image.open(image_bytes).convert("L")

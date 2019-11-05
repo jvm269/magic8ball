@@ -25,4 +25,4 @@ webpage: https://magic8ballprgt.herokuapp.com/
 
 Here is the screenshot of the webpage:
 
-![screenshot](https://github.com/jvm269/magic8ball/blob/master/images/magic8ballprgt.herokuapp.com_.png)
+![screenshot](https://github.com/jvm269/magic8ball/blob/master/images/homepage.png)

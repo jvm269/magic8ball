@@ -22,3 +22,7 @@ Dataset contains 60,000 training images and 10,000 testing images.
 Significance: Data can be used for Graphology, which is the study of handwritten patterns indiciating a persons' current psychological state. It is commonly used to determine personality characteristics/Pseudoscience. The purpose of this project can be used to help provide criminologists with technological tools for further insight into criminal assessment.
  
 webpage: https://magic8ballprgt.herokuapp.com/
+
+Here is the screenshot of the webpage:
+
+![screenshot](https://github.com/jvm269/magic8ball/blob/master/images/magic8ballprgt.herokuapp.com_.png)

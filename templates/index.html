@@ -2,13 +2,43 @@
     <style>
       @import url('https://fonts.googleapis.com/css?family=Oswald');
    
-      
+      /* Css code containing background of webpage: dropdown menu and magic 8 ball */
       html {
         font-family: 'Oswald', sans-serif;
         font-size: 16px;
       }
+      .mainmenubtn {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    /*padding:20px;
+    margin-top:20px;*/
+    }
+    .mainmenubtn:hover {
+    background-color: blue;
+    }
+    .dropdown {
+      width: 200px;
+    display: inline-block;
+   }
+    .dropdown-child {
+    display: none;
+    background-color: skyblue;
+    min-width: 200px;
+    }
+    .dropdown-child a {
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+      }
+      .dropdown:hover .dropdown-child {
+        display: block;
+      }
       .surface {
-        position: fixed;
+        
         top: 0;
         left: 0;
         height: 100vh;
@@ -17,12 +47,12 @@
         color: #fff;
       }
       .ball-and-shadow {
-        position: absolute;
+        position: relative;
         top: 0;
         right: 0;
         bottom: 5em;
         left: 0;
-        margin: auto;
+        /*margin: auto;*/
         height: 300px;
         width: 300px;
       }
@@ -149,12 +179,50 @@
         color: rgba(240, 220, 240, .86);
         text-align: center;
       }
+
+      #restartBtn{
+        color: white;
+        border: 1px solid white;
+        background-color: grey;
+        font-size: 40px;
+        width: 150px;
+        padding-top: 0;
+        float: left;
+      }
+      
     </style>
   </head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <body onload="init()">
-    <div class="surface">
-      <div class="ball-and-shadow">
+
+  <div class="surface">
+
+      <div style="float: right;" class="dropdown">
+          <button class="mainmenubtn">Contact Information</button>
+          <div class="dropdown-child">
+            <a href="https://www.linkedin.com/in/moutasemakkad/">Moutasem Akkad</a>
+            <a href="https://www.linkedin.com/in/krystal-briggs-2019/">Krystal Briggs</a>
+            <a href="https://www.linkedin.com/in/ganjin/">Gan Jin</a>
+            <a href="https://www.linkedin.com/in/jihan-m-7b218566/">Jihan McKenzie</a>
+            <a href="https://www.linkedin.com/in/denise-person-7118b66/">Denise Person</a>
+            <a href="https://www.linkedin.com/in/rachelksong/">Rachel Song</a>
+          </div>
+        </div>
+
+    <div style="float:left;">
+      <div style="width: 400px; margin-bottom: 15px; margin-top: 5px;" class="text-center">
+        <font size="20">
+          <div style="border:1px solid white;" id="result">
+            <p >You wrote: </p>
+            </div>
+            
+            </font>
+        </div>
+  
+        <canvas id="can" width="300" height="300" style="position:absolute;top:110; left:0;border:2px solid;"></canvas>
+
+      <div style="float: left; margin-left: 400px; width: 300px;" class="ball-and-shadow">
         <div class="ball">
           <div class="upper-shine"></div>
           <div class="inside">
@@ -171,30 +239,28 @@
         </div>
         <div class="shadow"></div>
       </div>
-      <div class="container">
-                      
-          <div>
-                  <div class="btn" onclick="window.location.reload();">
+         <p style="clear: both;"></p> 
+          
+                  <!-- <div class="btn" onclick="window.location.reload();">
                       Restart
-                  </div>
-              <canvas id="can" width="250" height="250" style="position:absolute;top:50; left:50;border:2px solid;"></canvas>
-              <!-- <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas> -->
-      
-              <img id="canvasimg" style="position:relative;" style="display:none;">
+                  </div> -->
 
-            <div class="text-center">
-              <font size="20">
-                <div id="result">
-                  <p >You wrote: </p>
-                  </div>
-                  </font>
-              </div>
+              <!-- <canvas id="can" width="449" height="449" style="position:relative;border:2px solid;"></canvas> -->
+              
+            <div id="restartBtn" class="btn" onclick="window.location.reload();">
+                Restart
             </div>
-          <div>
-  ​
-      
+              <img id="canvasimg" style="display:none; position:relative;">
+              
+            
+          
+          </div>
+            
+    <div>   
       <div class="ad">Columbia University</div>
     </div>
+    </div>
+  
   <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>

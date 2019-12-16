@@ -1,14 +1,7 @@
-# Magic8ball
-Project:  Magic 8 Ball
+# Convultional Neural Network Project - Hand-writing recognition
 
 
-Team:  
-Moutasem Akkad  
-Krystal Briggs  
-Gan Jin  
-Jihan McKenzie  
-Denise Person  
-Rachel Song  
+
 
 Proposal:  
 Creating a user interactive interface that utilizes machine leanring to identify handwritten numbers and capital letters.

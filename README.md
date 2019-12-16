@@ -1,6 +1,11 @@
 # Convultional Neural Network Project - Hand-writing recognition
 
-
+Team:
+Rachel Song
+Krystal Briggs
+Jihan Mckenzie
+Moutasem Akkad
+Gan Jin
 
 
 Proposal:  
